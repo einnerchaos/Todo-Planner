@@ -1,16 +1,10 @@
 {
+  "name": "todo-planner",
   "version": 2,
   "builds": [
     {
       "src": "backend/server.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "backend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
     }
   ],
   "routes": [
@@ -20,7 +14,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/backend/index.html"
+      "dest": "/backend/server.js"
     }
   ]
 } 
