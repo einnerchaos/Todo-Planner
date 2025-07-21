@@ -3,7 +3,7 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 
 // Database file path
-const dbPath = path.join(__dirname, 'todo_planner.db');
+const dbPath = process.env.NODE_ENV === 'production' ? ':memory:' : path.join(__dirname, 'todo_planner.db');
 
 // Create database connection
 const db = new sqlite3.Database(dbPath, (err) => {
